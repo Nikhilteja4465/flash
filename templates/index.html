@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+  <title>Stroke Prediction</title>
+  <style> 
+  ::-webkit-input-placeholder { /* Edge */
+  color: red;
+}
+
+.glow {
+  font-size: 60px;
+  color: green;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+input[type=text], input[type=submit] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+}
+img {
+  border-radius: 50%;
+}
+</style>
+</head>
+
+<body>
+<div id="example1">
+ <div class="login">
+	<marquee Scrollamount=40><h1 class="glow">Stroke prediction</h1></marquee>
+
+<center>
+
+<h1 class="glow">{{ prediction_text }}</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	 <input type="text" name="insect" placeholder="Your Gender (0-male) (1-female)" required="required" />
+<br>
+   <br>
+   <input type="text" name="pesticide" placeholder="your age"  required="required"  />
+   <br>
+   <br>
+   <input type="text" name="season" placeholder="Are you having hypertension (yes = 1 ,no = 0)" required="required" />
+   <br>
+   <br>
+	<input type="text" name="doses" placeholder="Are you married(yes = 1 ,no = 0)" required="required" />
+	<br>
+   <br>
+        <input type="text" name="used" placeholder="work type(0,1,2,3,4)" required="required" />
+		<br>
+   <br>
+        <input type="text" name="quit" placeholder="you belong to rural-1 or urban area-0" required="required" />
+		<br>
+   <br>
+	<input type="text" name="ctype" placeholder="your glucose level" required="required" />
+	<br>
+   <br>
+        <input type="text" name="pc2" placeholder="body mass index" required="required" />
+		<br>
+   <br>
+        
+		
+ 
+    <input type="submit" value="Predict the stroke" >
+	</center> 
+    </form>
+
+   <br>
+   <br>
+   
+
+ </div>
+
+</body>
+</html>
