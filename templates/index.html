@@ -51,7 +51,7 @@ img {
 
 <h1 class="glow">{{ prediction_text }}</h1>
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predict')}}"method="post" data-netlify="true">
     	 <input type="text" name="insect" placeholder="Your Gender (0-male) (1-female)" required="required" />
 <br>
    <br>
